@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Regression Suite" time-out="5000" verbose="1">
+    <!--    <test verbose="2" preserve-order="true" name="/Users/ianproshkovskyi/Documents/gradleapp/src/test/resources">-->
+
+
+
+    <test name="Admin suite">
+        <parameter name="username" value="user"/>
+        <parameter name="password" value="pass1234"/>
+<!--        <packages>-->
+<!--            <package name="com.example"/>-->
+<!--        </packages>-->
+        <classes>
+            <class name="com.example.TestParametersWithDataProvider"/>
+        </classes>
+
+    </test>
+
+
+    <test name="groupingtest">
+
+        <groups>
+            <run>
+                <exclude name="sanity"/>
+                <include name="regression"/>
+            </run>
+        </groups>
+
+        <classes>
+            <class name="com.example.LoginTest"/>
+            <class name="com.example.TestWithGroups"/>
+        </classes>
+
+    </test>
+</suite>
